@@ -31,10 +31,10 @@
 
 | IP | 角色 | 服务 |
 |----|------|------|
-| 10.127.19.15 | 客户端 | Filebeat → 19.16 |
-| 10.127.19.16 | 日志服务器 | Logstash + API + DeepSeek 代理 |
-| 10.127.19.17 | SNMP 监控 | Prometheus + SNMP Exporter + sFlow-RT + Grafana |
-| 10.127.19.18 | ITOps 平台 | Docker (前端+后端) |
+| 192.168.1.15 | 客户端 | Filebeat → 19.16 |
+| 192.168.1.16 | 日志服务器 | Logstash + API + DeepSeek 代理 |
+| 192.168.1.17 | SNMP 监控 | Prometheus + SNMP Exporter + sFlow-RT + Grafana |
+| 192.168.1.18 | ITOps 平台 | Docker (前端+后端) |
 
 ## 功能
 
@@ -68,14 +68,14 @@
 
 ```bash
 # 1. 复制 docker-compose.yml 到服务器
-scp docker-compose.yml root@10.127.19.18:/opt/
+scp docker-compose.yml root@192.168.1.18:/opt/
 
 # 2. 启动服务
-ssh root@10.127.19.18 "cd /opt && docker compose -f docker-compose.yml up -d"
+ssh root@192.168.1.18 "cd /opt && docker compose -f docker-compose.yml up -d"
 
 # 3. 部署 Grafana（在 19.17 上）
-scp install-grafana.sh root@10.127.19.17:/tmp/
-ssh root@10.127.19.17 "bash /tmp/install-grafana.sh"
+scp install-grafana.sh root@192.168.1.17:/tmp/
+ssh root@192.168.1.17 "bash /tmp/install-grafana.sh"
 ```
 
 ### Docker 镜像
