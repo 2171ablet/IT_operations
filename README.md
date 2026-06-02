@@ -63,7 +63,7 @@ IT_operations/
 ├── scripts/
 │   ├── install.sh            # 一键安装
 │   ├── install-grafana.sh    # Grafana 安装
-│   └── brand-fix.py          # 品牌定制工具
+│   └── customize.py           # 界面定制工具
 ├── frontend/
 │   └── index-v2.js           # 前端定制
 ├── backend/
